@@ -1,4 +1,4 @@
-package edu.mum.easy.array;
+package edu.mum.medium.array;
 
 /**
  * Created by hungduong on 1/11/17.

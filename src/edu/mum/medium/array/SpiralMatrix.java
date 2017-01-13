@@ -1,4 +1,4 @@
-package edu.mum.easy.array;
+package edu.mum.medium.array;
 
 import java.util.ArrayList;
 import java.util.Arrays;
