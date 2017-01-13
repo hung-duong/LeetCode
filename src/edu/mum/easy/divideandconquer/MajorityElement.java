@@ -4,6 +4,7 @@ package edu.mum.easy.divideandconquer;
  * Created by hungduong on 1/6/17.
  */
 public class MajorityElement {
+    //Note: The majority element is the element that appears more than ⌊ n/2 ⌋ times
     //O(n) and O(1) space
     public static int majorityElement01(int[] nums) {
         int major = nums[0];
