@@ -18,7 +18,7 @@ public class AddAndSearchWord {
 
         // Adds a word into the data structure.
         public void addWord(String word) {
-            HashMap<Character, TrieNode> children = (HashMap<Character, TrieNode>) root.chidren;
+            HashMap<Character, TrieNode> children = (HashMap<Character, TrieNode>) root.children;
 
             for(int i = 0; i < word.length(); i++) {
                 char c = word.charAt(i);
@@ -31,7 +31,7 @@ public class AddAndSearchWord {
                     children.put(c, t);
                 }
 
-                children = (HashMap<Character, TrieNode>) t.chidren;
+                children = (HashMap<Character, TrieNode>) t.children;
 
                 //set leaf node
                 if(i == word.length() - 1) {
@@ -49,7 +49,7 @@ public class AddAndSearchWord {
         }
 
         public boolean searchNode(TrieNode node, String str, int position) {
-            HashMap<Character, TrieNode> children = (HashMap<Character, TrieNode>) node.chidren;
+            HashMap<Character, TrieNode> children = (HashMap<Character, TrieNode>) node.children;
             char c = str.charAt(position);
             TrieNode t = null;
 

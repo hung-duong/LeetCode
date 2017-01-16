@@ -15,7 +15,7 @@ public class ImplementTriePrefixTree {
 
         // Inserts a word into the trie.
         public void insert(String word) {
-            HashMap<Character, TrieNode> children = (HashMap<Character, TrieNode>) root.chidren;
+            HashMap<Character, TrieNode> children = (HashMap<Character, TrieNode>) root.children;
 
             for(int i = 0; i < word.length(); i++) {
                 char c = word.charAt(i);
@@ -28,7 +28,7 @@ public class ImplementTriePrefixTree {
                     children.put(c, t);
                 }
 
-                children = (HashMap<Character, TrieNode>) t.chidren;
+                children = (HashMap<Character, TrieNode>) t.children;
 
                 //set leaf node
                 if(i == word.length() - 1) {
@@ -50,7 +50,7 @@ public class ImplementTriePrefixTree {
 
         public TrieNode searchNode(String str) {
 
-            HashMap<Character, TrieNode> children = (HashMap<Character, TrieNode>) root.chidren;
+            HashMap<Character, TrieNode> children = (HashMap<Character, TrieNode>) root.children;
             TrieNode t = null;
 
             for(int i = 0; i < str.length(); i++) {
@@ -58,7 +58,7 @@ public class ImplementTriePrefixTree {
 
                 if(children.containsKey(c)) {
                     t = children.get(c);
-                    children = (HashMap<Character, TrieNode>) t.chidren;
+                    children = (HashMap<Character, TrieNode>) t.children;
                 } else {
                     return null;
                 }
