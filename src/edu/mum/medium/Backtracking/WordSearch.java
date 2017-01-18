@@ -1,4 +1,4 @@
-package edu.mum.medium.array;
+package edu.mum.medium.Backtracking;
 
 /**
  * Created by hungduong on 1/15/17.

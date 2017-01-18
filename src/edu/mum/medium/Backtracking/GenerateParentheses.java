@@ -1,4 +1,4 @@
-package edu.mum.medium.combination;
+package edu.mum.medium.Backtracking;
 
 import java.util.ArrayList;
 import java.util.List;
