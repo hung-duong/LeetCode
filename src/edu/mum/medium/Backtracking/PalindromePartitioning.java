@@ -21,6 +21,16 @@ public class PalindromePartitioning {
             }
         }
 
+        for(int i = 0; i<s.length(); i++) {
+            for(int j = 0; j<s.length(); j++) {
+                if(DP[i][j])
+                    System.out.print(" " + 1);
+                else
+                    System.out.print(" " + 0);
+            }
+            System.out.println();
+        }
+
         backtrack(s, 0, DP, new ArrayList<>(), result);
 
         return result;
@@ -42,7 +52,7 @@ public class PalindromePartitioning {
     }
 
     public static void main(String[] args) {
-        String s = "aaabbc";
+        String s = "aaabbcc";
 
         List<List<String>> result = partition(s);
 

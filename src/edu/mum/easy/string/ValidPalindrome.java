@@ -3,6 +3,8 @@ package edu.mum.easy.string;
 /**
  * Created by hungduong on 1/26/17.
  */
+//What is Palindrome?
+//A palindrome is a string which reads the same in both directions.
 public class ValidPalindrome {
     public boolean isPalindrome(String s) {
         if(s == null || s.length() == 0)
