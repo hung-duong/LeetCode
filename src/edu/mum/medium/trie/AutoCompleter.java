@@ -86,6 +86,7 @@ public class AutoCompleter {
                 "San Francisco",
         };
 
+
         AutoCompleter ac = new AutoCompleter(DICTIONARY);
         List<String> result = ac.search("San C");
         System.out.print(result);
