@@ -1,6 +1,4 @@
-package edu.mum.medium.Backtracking;
-
-import edu.mum.easy.string.ValidPalindrome;
+package edu.mum.medium.backtracking;
 
 import java.util.ArrayList;
 import java.util.List;

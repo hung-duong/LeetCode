@@ -1,4 +1,4 @@
-package edu.mum.hard.Backtracking;
+package edu.mum.hard.backtracking;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -1,25 +1,23 @@
-package edu.mum.medium.Backtracking;
+package edu.mum.medium.backtracking;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 /**
  * Created by hungduong on 1/24/17.
  */
-public class PermutationsII {
-    public static List<List<Integer>> permuteUnique(int[] nums) {
+public class Permutations {
+    public static List<List<Integer>> permute(int[] nums) {
         List<List<Integer>> result = new ArrayList<>();
         if(nums == null || nums.length == 0)
             return result;
-
-        Arrays.sort(nums);
 
         boolean[] visited = new boolean[nums.length];
 
         permuteHelper(nums, visited, new ArrayList<>(), result);
 
         return result;
+
     }
 
     public static void permuteHelper(int[] nums, boolean[] visited, List<Integer> permutation, List<List<Integer>> result) {
@@ -30,8 +28,6 @@ public class PermutationsII {
 
         for (int i = 0; i < nums.length; i++) {
             if(!visited[i]) {
-                if(i > 0 && nums[i] == nums[i - 1] && visited[i - 1]) continue;
-
                 permutation.add(nums[i]);
                 visited[i] = true;
 
@@ -44,8 +40,8 @@ public class PermutationsII {
     }
 
     public static void main(String[] args) {
-        int[] nums = {1, 1, 3};
-        List<List<Integer>> result = permuteUnique(nums);
+        int[] nums = {1, 2, 3};
+        List<List<Integer>> result = permute(nums);
 
         for (List<Integer> ls : result) {
             System.out.println(ls);

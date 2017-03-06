@@ -1,4 +1,4 @@
-package edu.mum.medium.Backtracking;
+package edu.mum.medium.backtracking;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -7,7 +7,7 @@ import java.util.List;
  * Created by hungduong on 1/25/17.
  */
 public class Combinations {
-    //Use Backtracking
+    //Use backtracking
     public static List<List<Integer>> combine(int n, int k) {
         List<List<Integer>> result = new ArrayList<>();
 

@@ -2,7 +2,7 @@ package edu.mum.medium.dynamicprogramming;
 
 /**
  * Created by hungduong on 1/3/17.
- * This algo bases on the Backtracking algorithm (Refer to https://en.wikipedia.org/wiki/Backtracking)
+ * This algo bases on the backtracking algorithm (Refer to https://en.wikipedia.org/wiki/Backtracking)
  */
 public class PartitionEqualSubsetSum {
     /*

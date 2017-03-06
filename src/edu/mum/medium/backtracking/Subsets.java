@@ -1,4 +1,4 @@
-package edu.mum.medium.Backtracking;
+package edu.mum.medium.backtracking;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -30,10 +30,39 @@ public class Subsets {
         }
     }
 
+    //Not use backtracking
+
+    /**
+     * Based on the binary: nums = {1, 2, 3} => 2^3 = 8
+     * => 000, 001, 010, 011, 100, 101, 110, 111
+     * => [], [1], [1, 2], [3], [1, 3],[2, 3], [1,2,3]
+     */
+    public static List<List<Integer>> subsetsII(int[] nums) {
+        List<List<Integer>> results = new ArrayList<>();
+
+        int max = 1 << nums.length;
+        for(int i = 0; i < max; i++) {
+            ArrayList<Integer> subset = new ArrayList<>();
+            int k = i;
+            int index = 0;
+            while(k > 0) {
+                if((k & 1) > 0) {
+                    subset.add(nums[index]);
+                }
+
+                k >>= 1;
+                index++;
+            }
+            results.add(subset);
+        }
+        return results;
+    }
+
+
     public static void main(String[] args) {
         int[] nums = {1, 2, 3};
 
-        List<List<Integer>> results = subsets(nums);
+        List<List<Integer>> results = subsetsII(nums);
 
         for(List<Integer> ls : results)
             System.out.println(ls);

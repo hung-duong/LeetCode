@@ -1,4 +1,4 @@
-package edu.mum.medium.Backtracking;
+package edu.mum.medium.backtracking;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -7,7 +7,7 @@ import java.util.List;
  * Created by hungduong on 1/25/17.
  */
 public class GrayCode {
-    //Backtracking => this method gives unexpected result
+    //backtracking => this method gives unexpected result
     public static List<Integer> grayCode01(int n) {
         List<Integer> result = new ArrayList<>();
 
