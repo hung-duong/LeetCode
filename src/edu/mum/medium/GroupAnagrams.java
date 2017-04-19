@@ -30,6 +30,7 @@ public class GroupAnagrams {
     }
 
     //Use prime number to optimize running time for sorting
+    //Running time is O(n*k)
     public List<List<String>> groupAnagrams02(String[] strs) {
         if (strs == null || strs.length == 0)
             return new ArrayList<List<String>>();

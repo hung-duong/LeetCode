@@ -1,7 +1,5 @@
 package edu.mum.medium;
 
-import edu.mum.easy.divideandconquer.MajorityElement;
-
 /**
  * Created by hungduong on 2/25/17.
  */

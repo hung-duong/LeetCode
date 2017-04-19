@@ -24,9 +24,12 @@ public class AutoCompleter {
         }
     }
 
-    AutoCompleter(String[] dictionary) {
+    AutoCompleter() {
         root = new TrieNode();
+    }
 
+    // Build dictionary
+    public void buildDictionary(String[] dictionary) {
         for(String input : dictionary) {
             insert(input);
         }
@@ -87,8 +90,9 @@ public class AutoCompleter {
         };
 
 
-        AutoCompleter ac = new AutoCompleter(DICTIONARY);
-        List<String> result = ac.search("San C");
+        AutoCompleter ac = new AutoCompleter();
+        ac.buildDictionary(DICTIONARY);
+        List<String> result = ac.search("S");
         System.out.print(result);
     }
 }

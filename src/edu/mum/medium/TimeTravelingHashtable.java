@@ -72,7 +72,7 @@ public class TimeTravelingHashtable<K, V> {
 
                 hash.put(key, list);
             } else {
-                list = hash.get(index);
+                list = hash.get(key);
                 list.add(new Pair(time, value));
             }
         }
@@ -81,7 +81,7 @@ public class TimeTravelingHashtable<K, V> {
     public V get(double time, K key) {
         int index = binarySearchIndex(time, key, false);
 
-        if(index != -1)
+        if(index == -1)
             return null;
 
         return hash.get(key).get(index).value;
