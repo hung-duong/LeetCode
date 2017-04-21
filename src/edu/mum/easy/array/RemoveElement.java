@@ -23,14 +23,14 @@ public class RemoveElement {
             }
         }
 
-        Arrays.stream(nums).forEach(System.out::print);
+        Arrays.stream(nums).forEach(System.out::println);
 
         return len + 1;
     }
 
     public static void main(String[] args) {
-        int[] nums = {3, 2, 2, 3, 2, 2};
+        int[] nums = {3, 4, 2, 3, 2, 2};
 
-        System.out.print(removeElement(nums, 3));
+        System.out.print(removeElement(nums, 2));
     }
 }

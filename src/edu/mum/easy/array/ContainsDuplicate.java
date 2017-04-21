@@ -1,7 +1,6 @@
 package edu.mum.easy.array;
 
-import java.util.HashSet;
-import java.util.Set;
+import java.util.*;
 
 /**
  * Created by hungduong on 1/10/17.
@@ -16,8 +15,9 @@ public class ContainsDuplicate {
             return false;
         }
 
-        // Use HashSet instead of List would reduce the searching time complexity
-        // to O(1) as opposed to a list which would be O(n).
+        // Why we use HashSet. Because add operation in HashSet take O(1) and return true if added AND return false if already exist
+        // In List use the add operation with O(n) running time
+        // In TreeSet also use the add operation with O(n) running time and return true if added
         Set<Integer> set = new HashSet<>();
         for(Integer num : nums) {
             if(!set.add(num)) {
@@ -38,6 +38,48 @@ public class ContainsDuplicate {
      * The 1st bit is 1. So we know 0x800 appeared before. Moreover, 0b10000111 means 0x800, 0x801, 0x802 and 0x807 has appeared before.
      */
     public boolean containsDuplicate02(int[] nums) {
-        return true;
+        if(nums == null || nums.length == 0) {
+            return false;
+        }
+
+        int size = Integer.MAX_VALUE;
+        byte[] tableLookupPOS = new byte[size/8 + 1];
+        byte[] tableLookupNEG = new byte[size/8 + 1];
+
+        boolean flag = false;
+        int k1 = 0, k2 = 0, check = 0;
+        for(Integer num : nums) {
+            if(num >= 0) {
+                k1 = num/8;
+                k2 = num%8;
+                check = 1 << k2;
+
+                if((tableLookupPOS[k1] & check) != 0) {
+                    return true;
+                }
+
+                tableLookupPOS[k1] |= check;
+            } else {
+                if(num == Integer.MIN_VALUE && !flag) {
+                    flag =  true;
+                } else if(num == Integer.MIN_VALUE) {
+                    return true;
+                } else {
+                    num = Math.abs(num);
+                    k1 = num / 8;
+                    k2 = num % 8;
+                    check = 1 << k2;
+
+                    if((tableLookupNEG[k1] & check) != 0) {
+                        return true;
+                    }
+
+                    tableLookupNEG[k1] |= check;
+                }
+            }
+
+        }
+
+        return false;
     }
 }

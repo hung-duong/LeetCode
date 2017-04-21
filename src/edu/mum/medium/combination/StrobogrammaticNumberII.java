@@ -5,11 +5,7 @@
  */
 package edu.mum.medium.combination;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Iterator;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 /**
  *
@@ -19,7 +15,7 @@ public class StrobogrammaticNumberII {
     HashMap<Character, Character> hashMap = new HashMap<>();
     List<String> strobogrammaticNumbers = new ArrayList<>();
     
-    public List<String> findStrobogrammatic(int n) {
+    public List<String> findStrobogrammatic01(int n) {
         hashMap.clear();
         strobogrammaticNumbers.clear();
         fillHashMap(hashMap);
@@ -83,7 +79,7 @@ public class StrobogrammaticNumberII {
         strobogrammaticHelper(n - 2);
     }
     
-    void fillHashMap(Map<Character, Character> hm) {
+    public void fillHashMap(Map<Character, Character> hm) {
         hm.put('0', '0');
         hm.put('8', '8');
         hm.put('1', '1');
@@ -91,12 +87,72 @@ public class StrobogrammaticNumberII {
         hm.put('9', '6');
     }
 
+    //Solution 2:
+    public List<String> findStrobogrammatic02(int n) {
+        List<String> one = new ArrayList<>(Arrays.asList("0","1","8"));
+        List<String> two = new ArrayList<>();
+        List<String> res = two;
+
+        if(n % 2 == 1) res = one;
+
+        for(int i = (n%2) + 2; i <= n; i++) {
+            List<String> tmp = new ArrayList<>();
+
+            for(String str: res) {
+                if(i != n)
+                    tmp.add("0" + str + "0");
+                tmp.add("1" + str + "1");
+                tmp.add("6" + str + "9");
+                tmp.add("8" + str + "8");
+                tmp.add("9" + str + "6");
+            }
+
+            res = tmp;
+        }
+
+        return res;
+    }
+
     public static void main (String[] args) {
         StrobogrammaticNumberII sn = new StrobogrammaticNumberII();
-        List<String> ls = sn.findStrobogrammatic(5);
+        List<String> ls = sn.findStrobogrammatic02(3);
         
         ls.stream().forEach((s) -> {
             System.out.println(s);
         });
     }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 }

@@ -9,6 +9,7 @@ import java.util.List;
 public class PascalsTriangle {
 
     //Use Divide and conquer =>  Time Limit Exceeded => Need to improve
+    //Running time: O(n*n) and space O(n*n)
     public static List<List<Integer>> generate01(int numRows) {
         int n = numRows;
 

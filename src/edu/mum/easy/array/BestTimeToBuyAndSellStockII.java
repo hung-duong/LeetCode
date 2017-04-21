@@ -1,4 +1,4 @@
-package edu.mum.medium.array;
+package edu.mum.easy.array;
 
 /**
  * Created by hungduong on 1/16/17.
@@ -35,7 +35,7 @@ public class BestTimeToBuyAndSellStockII {
     }
 
     public static void main(String[] args) {
-        int[] nums = {3, 3};
+        int[] nums = {7, 2, 1, 10, 2, 5};
         System.out.print(maxProfit(nums));
     }
 }

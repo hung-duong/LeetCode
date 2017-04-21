@@ -8,7 +8,7 @@ public class CountInversionPairs {
     public static int mergeSort(int[] arr, int left, int right) {
         int inv_count = 0;
 
-        if(left > right) {
+        if(left >= right) {
             return inv_count;
         } else {
             int mid = (left + right)/2;
@@ -45,12 +45,12 @@ public class CountInversionPairs {
             if (L[i] <= R[j])
             {
                 arr[k++] = L[i++];
+                inv_count++;
             }
             else
             {
                 arr[k++] = R[j++];
             }
-            inv_count = inv_count + (mid - i);
         }
 
         while (i < n1)
@@ -67,8 +67,8 @@ public class CountInversionPairs {
     }
 
     public static void main(String[] args) {
-        int arr[] = {1, 20, 6, 4, 5};
-        int inv_counts = mergeSort(arr, 0, arr.length);
+        int arr[] = {2, 3, 8, 6, 1};
+        int inv_counts = mergeSort(arr, 0, arr.length - 1);
 
         System.out.print(inv_counts);
     }

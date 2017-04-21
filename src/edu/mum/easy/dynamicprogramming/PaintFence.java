@@ -9,10 +9,15 @@ package edu.mum.easy.dynamicprogramming;
 // Return the total number of ways you can paint the fence.
 public class PaintFence {
     /*
-     * Solution: Assuming there are 3 posts, if the first one and the second one has the same color,
+     * Solution:
+     * N = 1: diff = k, same = 0 => f(1) = 0 + k
+     * N = 2: diff = k*(k-1), same = k => f(2) = k + k(k-1)
+     * N = 3 posts, if the first one and the second one has the same color,
      * then the third one has k-1 options. The first and second together has k options.
      * If the first and the second do not have same color, the total is k * (k-1), then the third one has k options.
-     * Therefore, f(3) = (k-1)*k + k*(k-1)*k = (k-1)(k+k*k)
+     * Therefore, f(3) = k*(k-1) + k*(k-1)*k = (k-1)(k+k*k)
+     * General: same[i] = diff[i-1]
+     *          diff[i] = (k - 1)(diff[i-1] + diff[i-2])
      */
     static public int numWays(int n, int k) {
         if (n == 0) return 0;

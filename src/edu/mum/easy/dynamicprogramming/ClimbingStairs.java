@@ -6,9 +6,7 @@ package edu.mum.easy.dynamicprogramming;
 public class ClimbingStairs {
     //Solution: O(n) and 0(n) space
     public static int climbStairs01(int n) {
-        if(n == 0) return 0;
-        if(n == 1) return 1;
-        if(n == 2) return 2;
+        if(n == 0 || n == 1 || n == 2) return n;
 
         int[] ways = new int[n];
         ways[0] = 1;
@@ -23,9 +21,7 @@ public class ClimbingStairs {
 
     //Solution: O(n) and 0(1) space
     public static int climbStairs02(int n) {
-        if(n == 0) return 0;
-        if(n == 1) return 1;
-        if(n == 2) return 2;
+        if(n == 0 || n == 1 || n == 2) return n;
 
         int first = 1, second = 2;
         int ways = 0;

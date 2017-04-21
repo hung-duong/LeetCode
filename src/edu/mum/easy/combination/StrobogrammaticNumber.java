@@ -46,6 +46,6 @@ public class StrobogrammaticNumber {
     }
 
     public static void main (String[] args) {
-        System.out.println(StrobogrammaticNumber.isStrobogrammatic("6699"));
+        System.out.println(StrobogrammaticNumber.isStrobogrammatic("689"));
     }
 }
