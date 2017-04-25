@@ -40,6 +40,7 @@ public class HappyNumber {
     }
 
     //we can simply adapt the Floyd Cycle detection algorithm
+    //https://en.wikipedia.org/wiki/Cycle_detection
     static public boolean isHappySol02(int n) {
         int slow, fast;
         slow = fast = n;

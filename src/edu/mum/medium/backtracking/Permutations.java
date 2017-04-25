@@ -7,6 +7,7 @@ import java.util.List;
  * Created by hungduong on 1/24/17.
  */
 public class Permutations {
+    //Use DFS
     public static List<List<Integer>> permute(int[] nums) {
         List<List<Integer>> result = new ArrayList<>();
         if(nums == null || nums.length == 0)

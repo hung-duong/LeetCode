@@ -12,6 +12,8 @@ public class PalindromePartitioning {
         List<List<String>> result = new ArrayList<>();
         boolean[][] DP = new boolean[s.length()][s.length()];
 
+        //DP array can be used to record the possible break for palindrome before we start recursion
+        //By this way, the 2d array dp contains the possible palindrome partition among all
         for(int i=0; i<s.length(); i++) {
             for(int j=0; j<=i; j++) {
                 //i-j <= 2 <=> a, aa, aba
@@ -20,7 +22,7 @@ public class PalindromePartitioning {
                 }
             }
         }
-
+        /*
         for(int i = 0; i<s.length(); i++) {
             for(int j = 0; j<s.length(); j++) {
                 if(DP[i][j])
@@ -29,7 +31,7 @@ public class PalindromePartitioning {
                     System.out.print(" " + 0);
             }
             System.out.println();
-        }
+        }*/
 
         backtrack(s, 0, DP, new ArrayList<>(), result);
 
@@ -52,7 +54,7 @@ public class PalindromePartitioning {
     }
 
     public static void main(String[] args) {
-        String s = "aaabbcc";
+        String s = "aaabbaa";
 
         List<List<String>> result = partition(s);
 

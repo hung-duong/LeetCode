@@ -23,6 +23,7 @@ public class PowerOfTwo {
     }
 
     //Solution 2: Better, O(1)
+    //n = 8 => 1000 & 0111 = 0
     static public boolean isPowerOfTwoSol2(int n) {
         return (n > 0) && ((n & (n-1)) == 0);
     }

@@ -7,6 +7,7 @@ import java.util.List;
  * Created by hungduong on 1/16/17.
  */
 public class Triangle {
+    //DP Bottom-up
     public static int minimumTotal(List<List<Integer>> triangle) {
         int rows = triangle.size();
         for(int i = rows - 2; i >= 0; i--) {

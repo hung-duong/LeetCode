@@ -44,7 +44,7 @@ public class GrayCode {
         List<Integer> result = new ArrayList<>();
 
         for(int i = 0; i < 1 << n; i++) {
-            result.add(i ^ i >> 1);
+            result.add(i ^ (i >> 1));
         }
 
         return result;

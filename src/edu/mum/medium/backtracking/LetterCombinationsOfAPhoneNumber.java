@@ -6,8 +6,10 @@ import java.util.List;
 
 /**
  * Created by hungduong on 1/17/17.
+ * Algorithm T9
  */
 public class LetterCombinationsOfAPhoneNumber {
+    //Running time: O(n^3) and O(3^n)
     public static List<String> letterCombinations(String digits) {
         List<String> result = new ArrayList<>();
         if(digits == null || digits.length() == 0)
@@ -36,7 +38,7 @@ public class LetterCombinationsOfAPhoneNumber {
     }
 
     public static void main(String[] args) {
-        List<String> list = letterCombinations("234");
+        List<String> list = letterCombinations("2345");
 
         list.forEach(System.out::println);
     }

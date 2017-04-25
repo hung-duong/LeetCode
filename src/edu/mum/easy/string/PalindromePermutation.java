@@ -1,4 +1,4 @@
-package edu.mum.easy;
+package edu.mum.easy.string;
 
 /**
  * Created by hungduong on 1/27/17.

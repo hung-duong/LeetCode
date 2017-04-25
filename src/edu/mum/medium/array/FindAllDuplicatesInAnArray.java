@@ -7,6 +7,7 @@ import java.util.Set;
 
 /**
  * Created by hungduong on 1/12/17.
+ * Given an array of integers, 1 ≤ a[i] ≤ n (n = size of array), some elements appear twice and others appear once.
  */
 public class FindAllDuplicatesInAnArray {
 
@@ -26,6 +27,14 @@ public class FindAllDuplicatesInAnArray {
     }
 
     //Solution 2: O(n) and O(1) space
+    //Eg. 4, 3, 2, 7, 8, 2, 3, 1
+    //i=0         -7
+    //i=1      -2
+    //i=2   -3
+    //i=3                  -3
+    //i=4                     -1
+    //i=5  add(3)
+    //i=6     add(2)
     public static List<Integer> findDuplicates02(int[] nums) {
         List<Integer> list = new ArrayList<>();
 

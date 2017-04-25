@@ -14,6 +14,9 @@ package edu.mum.medium.backtracking;
 public class AndroidUnlockPatterns {
     public static int numberOfPatterns(int m, int n) {
         // Skip array represents number to skip between two pairs
+        //  1 2 3
+        //  4 5 6
+        //  7 8 9
         int[][] skip = new int[10][10];
         skip[1][3] = skip[3][1] = 2;
         skip[1][7] = skip[7][1] = 4;
@@ -28,7 +31,7 @@ public class AndroidUnlockPatterns {
         int rst = 0;
 
         // DFS search each length from m to n
-        for(int i = m; i < n; i++) {
+        for(int i = m; i <= n; i++) {
             rst += dfs(visited, skip, 1, i - 1) * 4; // 1, 3, 7, 9 are symmetric
             rst += dfs(visited, skip, 2, i - 1) * 4; // 2, 4, 6, 8 are symmetric
             rst += dfs(visited, skip, 5, i - 1);     // 5
@@ -56,6 +59,6 @@ public class AndroidUnlockPatterns {
     }
 
     public static void main(String[] args) {
-        System.out.print(numberOfPatterns(1, 2));
+        System.out.print(numberOfPatterns(1, 3));
     }
 }

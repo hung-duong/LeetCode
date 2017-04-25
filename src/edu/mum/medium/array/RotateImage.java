@@ -5,15 +5,15 @@ package edu.mum.medium.array;
  */
 public class RotateImage {
     /*
-     * Eg.  1 2 3    Rotate 90   7 4 1
-     *      4 5 6     ====>      8 5 2
-     *      7 8 9                9 6 3
+     * Eg.  1 2 3        7 2 1      7 4 1
+     *      4 5 6    =>  4 5 6  =>  8 5 2
+     *      7 8 9        9 8 3      9 6 3
      */
     public static void rotate(int[][] matrix) {
         int len = matrix.length;
 
-        for(int i = 0; i < len / 2; i++) {
-            for(int j = i; j < len - i - 1; j++) {
+        for(int i = 0; i < len / 2; i++) {       //For rows
+            for(int j = i; j < len - i - 1; j++) {    //For columns
                 int temp = matrix[i][j];
                 matrix[i][j] = matrix[len - j - 1][i];
                 matrix[len - j - 1][i] = matrix[len - i - 1][len - j - 1];

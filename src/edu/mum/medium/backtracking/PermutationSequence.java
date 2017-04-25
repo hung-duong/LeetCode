@@ -63,7 +63,6 @@ Giving us 3142. If you manually list out the permutations using DFS method, it w
 public class PermutationSequence {
 
     public static String getPermutation(int n, int k) {
-        int pos = 0;
         List<Integer> numbers = new ArrayList<>();
         int[] factorial = new int[n+1];
         StringBuilder sb = new StringBuilder();
@@ -83,7 +82,7 @@ public class PermutationSequence {
         }
         // numbers = {1, 2, 3, 4}
 
-        k--;
+        k--; //subtract 1 because of things always starting at 0
 
         for(int i = 1; i <= n; i++){
             int index = k / factorial[n-i];
@@ -98,8 +97,12 @@ public class PermutationSequence {
 
 
     public static void main(String[] args) {
-        int[] nums = {1, 2, 3};
-        String result = getPermutation(3, 2);
+        //n = 3 => [1, 2, 3]
+        //k = 1 => [1, 2, 3]
+        //k = 2 => [1, 3, 2]
+        //k = 3 => [2, 1, 3]
+        //... k = 6 => [3, 2, 1]
+        String result = getPermutation(3, 3);
 
         System.out.println(result);
     }

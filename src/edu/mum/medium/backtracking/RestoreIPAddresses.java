@@ -14,6 +14,8 @@ public class RestoreIPAddresses {
         return result;
     }
 
+    // idx = 0 -> n
+    // count = 1 -> 4
     public static void restoreIpAddressesHelper(String s, int idx, int count, String restored, List<String> result) {
         if(count > 4) return;
         if(count == 4) {
@@ -35,7 +37,7 @@ public class RestoreIPAddresses {
     }
 
     public static void main(String[] args) {
-        String str = "25525511135";
+        String str = "2525511135";
         List<String> result = restoreIpAddresses(str);
 
         for (String s : result) {

@@ -23,12 +23,12 @@ public class MinimumSizeSubarraySum {
             }
         }
 
-        return minLen = minLen != Integer.MAX_VALUE ? minLen : 0;
+        return minLen != Integer.MAX_VALUE ? minLen : 0;
     }
 
     public static void main(String[] args) {
-        int[] nums = {1,2, 3, 4, 5};
-        System.out.print(minSubArrayLen(5, nums));
+        int[] nums = {2,3,1,2,4,3};
+        System.out.print(minSubArrayLen(7, nums));
     }
 
 }
