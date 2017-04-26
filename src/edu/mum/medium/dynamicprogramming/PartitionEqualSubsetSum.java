@@ -17,12 +17,9 @@ public class PartitionEqualSubsetSum {
 
         //Get all sum of all elements in array
         int sum = 0;
-        for(int e : nums) {
-            sum += e;
-        }
+        for(int e : nums) sum += e;
 
-        if(sum % 2 == 1)
-            return false;
+        if(sum % 2 == 1) return false;
 
         sum /= 2;
         boolean[][] subset = new boolean[nums.length][sum + 1];

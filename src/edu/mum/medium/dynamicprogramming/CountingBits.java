@@ -9,6 +9,10 @@ package edu.mum.medium.dynamicprogramming;
 * General fomula to calcul the number bits of A[i]
 * if n is even: F{A[i]} = F{A[i>>1]}
 * if n is older: F{A[i]} = F{A[i>>1]} + 1
+* Eg: n = 6
+*   =>0,   1,   2,    3,    4,     5,     6
+*     0  0001  0010  0011  0100  0101   0110
+*     0    1    1     2     1      2      2
 */
 public class CountingBits {
     //Code better (3s)

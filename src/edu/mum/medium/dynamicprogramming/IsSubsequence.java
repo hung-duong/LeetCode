@@ -31,8 +31,8 @@ public class IsSubsequence {
         for(int indexS = 0; indexS < s.length(); indexS++) {
             char c = s.charAt(indexS);
 
-            prev = t.indexOf(c, prev);
-
+            prev = t.indexOf(c, prev); // O(n * m) with n is the length of String and m is length od subString
+                                       // Return -1 if could not find
             if(prev == -1) return false;
             prev++;
         }

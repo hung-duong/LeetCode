@@ -37,7 +37,7 @@ public class UniqueSubstringsInWraparoundString {
     }
 
     public static void main(String[] args) {
-        String s = "abcdkaz";
+        String s = "zab";
 
         System.out.print(findSubstringInWraproundString(s));
     }

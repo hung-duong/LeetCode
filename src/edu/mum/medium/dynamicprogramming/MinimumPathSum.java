@@ -26,13 +26,10 @@ public class MinimumPathSum {
             for(int j = 0; j < n; j++) {
                 //Sum successive of first column
                 if(j == 0) {
-                    Q[i] += grid[i][j];
+                    Q[j] += grid[i][j];
                 } else {
-                    if(Q[j] < Q[j - 1]) {
-                        Q[j] = Q[j] + grid[i][j];
-                    } else {
-                        Q[j] = Q[j - 1] + grid[i][j];
-                    }
+                    int min = Q[j] < Q[j - 1] ? Q[j] : Q[j - 1];
+                    Q[j] = min + grid[i][j];
                 }
             }
         }
