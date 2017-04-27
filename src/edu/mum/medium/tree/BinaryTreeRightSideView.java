@@ -7,6 +7,9 @@ import java.util.List;
 
 /**
  * Created by hungduong on 10/10/16.
+ *              /\     <-
+ *             /  \    <-
+ *            /        <-
  */
 public class BinaryTreeRightSideView {
     List<Integer> lst = new ArrayList<>();

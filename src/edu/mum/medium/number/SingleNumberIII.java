@@ -13,7 +13,7 @@ public class SingleNumberIII {
             diff = diff ^ num;
         }
 
-        // Get its last set bit
+        // Get its last set bit, that is the different bit between two elements appear only once
         diff &= -diff;
 
         // Pass 2 :

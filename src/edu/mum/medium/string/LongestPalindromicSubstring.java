@@ -25,17 +25,17 @@ public class LongestPalindromicSubstring {
         for(int i=0; i<n-1; i++) {
             if(chars[i] == chars[i+1]) {
                 DP[i][i+1] = true;
-                longestBegin = i;
+                longestBegin = i; //longestBegin at len = 2
                 maxLen = 2;
             }
         }
 
         for(int len = 3; len <= n; len++) {
-            for(int i = 0; i < n-len+1; i++) {
-                int j = i+len-1;
+            for(int i = 0; i < n - len + 1; i++) {
+                int j = i + len - 1;
                 if(chars[i] == chars[j] && DP[i+1][j-1]) {
                     DP[i][j] = true;
-                    longestBegin = i;
+                    longestBegin = i; //longestBegin at len = 3,4, ...,n
                     maxLen = len;
                 }
             }

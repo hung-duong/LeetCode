@@ -3,7 +3,7 @@ package edu.mum.medium.string;
 /**
  * Created by hungduong on 1/28/17.
  */
-public class LongestPalindrome {
+public class LongestPalindromeSubsequence {
     /* Question: (This this another question of Longest Palindromic Substring above)
      * Given a sequence, find the length of the longest palindromic subsequence in it.
      * For example, if the given sequence is “BBABCBCAB”,
@@ -20,7 +20,7 @@ public class LongestPalindrome {
         return lps(s.toCharArray(), 0, s.length() - 1);
     }
 
-    public static long lps(char[] chars, int lo, int hi) {
+    public static int lps(char[] chars, int lo, int hi) {
         if(lo == hi) return 1;
         if(chars[lo] == chars[hi] && lo + 1 == hi) return 2;
 
@@ -38,23 +38,22 @@ public class LongestPalindrome {
     //                  0 0 1 1                     0 0 1 1 1
     //                  0 0 0 1                     0 0 0 1 1
     //                                              0 0 0 0 1
-    public static long longestLengthPalindromeDP(String s) {
+    public static int longestLengthPalindromeDP(String s) {
         int n = s.length();
-        int i, j, cl;
-        int L[][] = new int[n][n];  // Create a table to store results of subproblems
+        char[] chars = s.toCharArray();
+        int[][] L = new int[n][n];  // Create a table to store results of subproblems
 
         // Strings of length 1 are palindrome of lentgh 1
-        for (i = 0; i < n; i++)
-            L[i][i] = 1;
+        for (int i = 0; i < n; i++) L[i][i] = 1;
 
-        for (cl = 2; cl <= n; cl++)
-        {
-            for (i = 0; i < n-cl+1; i++)
-            {
-                j = i+cl-1;
-                if (s.charAt(i) == s.charAt(j) && cl == 2)
+        //l is length of substring
+        for (int l = 2; l <= n; l++) {
+            for (int i = 0; i < n - l + 1; i++) {
+                int j = i + l - 1;
+
+                if (chars[i] == chars[j] && l == 2)
                     L[i][j] = 2;
-                else if (s.charAt(i) == s.charAt(j))
+                else if (chars[i] == chars[j])
                     L[i][j] = L[i+1][j-1] + 2;
                 else
                     L[i][j] = Math.max(L[i][j-1], L[i+1][j]);
@@ -72,7 +71,7 @@ public class LongestPalindrome {
     }
 
     public static void main(String[] args) {
-        String text = "agbdba";
+        String text = "abba";
 
         long len = longestLengthPalindromeDP(text);
         System.out.print(len);

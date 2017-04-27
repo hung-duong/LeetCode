@@ -40,26 +40,20 @@ public class CountInversionPairs {
         int i = 0, j = 0;
 
         int k = left;
-        while (i < n1 && j < n2)
-        {
-            if (L[i] <= R[j])
-            {
+        while (i < n1 && j < n2) {
+            if (L[i] <= R[j]) {
                 arr[k++] = L[i++];
                 inv_count++;
-            }
-            else
-            {
+            } else {
                 arr[k++] = R[j++];
             }
         }
 
-        while (i < n1)
-        {
+        while (i < n1) {
             arr[k++] = L[i++];
         }
 
-        while (j < n2)
-        {
+        while (j < n2) {
             arr[k++] = R[j++];
         }
 

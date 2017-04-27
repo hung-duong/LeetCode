@@ -16,8 +16,7 @@ public class RemoveKDigits {
             if(str.charAt(pos) > str.charAt(pos + 1)) {
                 str.deleteCharAt(pos);
                 k--;
-                if(pos > 0)
-                    pos--;
+                if(pos > 0) pos--;
             } else {
                 pos++;
             }
@@ -36,6 +35,6 @@ public class RemoveKDigits {
     }
 
     public static void main(String[] args) {
-        System.out.print(RemoveKDigits.removeKdigits("1234567890", 9));
+        System.out.print(RemoveKDigits.removeKdigits("1234567890", 8));
     }
 }
