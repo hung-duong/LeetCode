@@ -35,7 +35,7 @@ public class Subsets {
     /**
      * Based on the binary: nums = {1, 2, 3} => 2^3 = 8
      * => 000, 001, 010, 011, 100, 101, 110, 111
-     * => [], [1], [1, 2], [3], [1, 3],[2, 3], [1,2,3]
+     * => [], [1], [2], [1, 2], [3], [1, 3],[2, 3], [1,2,3]
      */
     public static List<List<Integer>> subsets02(int[] nums) {
         List<List<Integer>> results = new ArrayList<>();
