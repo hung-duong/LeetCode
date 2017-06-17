@@ -29,7 +29,7 @@ public class RemoveElement {
     }
 
     public static void main(String[] args) {
-        int[] nums = {3, 4, 2, 3, 2, 2};
+        int[] nums = {3, 4, 2, 3, 5, 6, 2, 2};
 
         System.out.print(removeElement(nums, 2));
     }

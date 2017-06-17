@@ -20,7 +20,7 @@ public class PalindromeLinkedList {
             slow = slow.next;
         }
 
-        //reverse the the 2nd half linked list
+        //reverse the 2nd half linked list
         slow = reverse(slow);
         fast = head;
 

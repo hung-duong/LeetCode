@@ -19,6 +19,7 @@ public class ContainsDuplicate {
         // In List use the add operation with O(n) running time
         // In TreeSet also use the add operation with O(n) running time and return true if added
         Set<Integer> set = new HashSet<>();
+
         for(Integer num : nums) {
             if(!set.add(num)) {
                 return true;
