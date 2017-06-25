@@ -45,7 +45,7 @@ public class FindAllAnagramsInAString {
     }
 
     public static void main(String[] args) {
-        String s = "aaabca";
+        String s = "aaaabca";
         String p = "ba";
 
         List<Integer> res = findAnagrams(s, p);
