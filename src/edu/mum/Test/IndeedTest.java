@@ -1,11 +1,33 @@
 package edu.mum.Test;
 
+import edu.mum.Utils.TreeNode;
+
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
 import java.util.*;
 
 /**
  * Created by hungduong on 5/31/17.
  */
 public class IndeedTest {
+    //Question 1
+    private static int isPresent(TreeNode root, int val){
+        TreeNode node = root;
+
+        while(node != null) {
+            if(val < node.val) {
+                node = node.left;
+            } else if(val > node.val) {
+                node = node.right;
+            } else {
+                return 1;
+            }
+        }
+
+        return 0;
+    }
+
     //Question 2
     public static List<Integer> getMinimumUniqueSum(String[] arr) {
         List<Integer> res = new ArrayList<>();
@@ -117,54 +139,85 @@ public class IndeedTest {
 
 
     //Question 4
-    public void SuperStack (String[] operations) {
+    public static String[] readOperation(String FileName) throws IOException{
+        BufferedReader br = new BufferedReader(new FileReader(FileName));
+        String[] operations;
+        int n = 0;
+
+        String currentLine;
+        if((currentLine = br.readLine()) != null) {
+            n = Integer.parseInt(currentLine);
+        }
+
+        if(n <= 0)
+            return null;
+
+        operations = new String[n];
+        int index = 0;
+        while((currentLine = br.readLine()) != null && index < n) {
+            operations[index++] = currentLine;
+        }
+
+        return operations;
+    }
+
+    public static void SuperStack(String FileName) throws IOException{
+        String[] operations = readOperation(FileName);
+        if(operations == null) return;
+
         int[] s = new int[operations.length];
         for(int i = 0; i < operations.length; i++) {
             s[i] = Integer.MIN_VALUE;
         }
 
-        int index = 0;
+        int n = -1;
         for(String str : operations) {
             String[] subStr = str.split(" ");
             switch (subStr[0]) {
                 case "push":
-                    index++;
-                    s[index] = Integer.parseInt(subStr[1]);
-                    System.out.println(s[index]);
+                    n++;
+                    s[n] = Integer.parseInt(subStr[1]);
+                    System.out.println(s[n]);
                     break;
                 case "pop":
-                    s[index] = Integer.MIN_VALUE;
-                    if(index > 1) {
-                        System.out.println(s[index]);
-                        index--;
-                    } else {
+                    if(n <= 0) {
                         System.out.println("EMPTY");
-                        if(index == 1)
-                            index--;
+                        if(n == 0) {
+                            s[n] = Integer.MIN_VALUE;
+                            n--;
+                        }
+                    } else {
+                        s[n] = Integer.MIN_VALUE;
+                        n--;
+                        System.out.println(s[n]);
                     }
                     break;
                 case "inc":
-                    int i = Integer.parseInt(subStr[1]) - 1;
                     int value = Integer.parseInt(subStr[2]);
+                    int i = Integer.parseInt(subStr[1]);
+
+                    i = i > n ? n : i - 1;
                     while(i >= 0) {
                         if(s[i] != Integer.MIN_VALUE) {
                             s[i] += value;
                         }
                         i--;
                     }
-
-                    System.out.println(s[index]);
+                    System.out.println(s[n]);
                     break;
             }
         }
     }
 
-    public static void main(String[] args) {
-        IndeedTest kp = new IndeedTest();
+    public static void main(String[] args) throws IOException {
+        /*IndeedTest kp = new IndeedTest();
 
         String commands = "GGRGGRGGGRGG";
 
-        System.out.println(kp.doesCircleExist(commands));
+        System.out.println(kp.doesCircleExist(commands));*/
+
+        String filename = "./src/edu/mum/Test/input.txt";
+        SuperStack(filename);
     }
 
 }
