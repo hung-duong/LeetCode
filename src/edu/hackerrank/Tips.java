@@ -42,7 +42,6 @@ public class Tips {
 
         //Convert Integer[] to List<Integer>
         List<Integer> list2 = Arrays.stream(arrConvert).collect(Collectors.toList());
-
         
     }
 }
