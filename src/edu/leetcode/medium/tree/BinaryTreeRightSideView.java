@@ -19,8 +19,8 @@ public class BinaryTreeRightSideView {
             return null;
 
         lst.add(root.val);
-        rightSideViewHelper(root.right, 2);
-        rightSideViewHelper(root.left, 2);
+        rightSideViewHelper(root.right, 1);
+        rightSideViewHelper(root.left, 1);
 
         return lst;
     }
