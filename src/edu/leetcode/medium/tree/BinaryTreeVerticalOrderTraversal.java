@@ -9,7 +9,7 @@ import java.util.*;
  */
 public class BinaryTreeVerticalOrderTraversal {
     /**
-     * Print all nodes in vertical from right to left
+     * Print all nodes in vertical from left to right
      */
     public static void findMinMaxDistance(TreeNode node, int[] minmax, int hd) {
         if (node == null) return;
