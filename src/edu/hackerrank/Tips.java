@@ -1,9 +1,6 @@
 package edu.hackerrank;
 
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.List;
-import java.util.Scanner;
+import java.util.*;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
@@ -42,6 +39,13 @@ public class Tips {
 
         //Convert Integer[] to List<Integer>
         List<Integer> list2 = Arrays.stream(arrConvert).collect(Collectors.toList());
-        
+
+
+        //Convert List<Integer> to Int[]
+        List<Integer> listInt = new ArrayList<>();
+        listInt.add(1);
+        listInt.add(2);
+
+        arr = listInt.stream().mapToInt(Integer::intValue).toArray();
     }
 }
