@@ -27,6 +27,11 @@ public class Tips {
         scan.close();
         */
 
+        String s1 = "abc";
+        String s2 = "abc";
+        s2 = "cde";
+        System.out.print(s1 + s2);
+
         //Convert int[] to List<Integer>. Use Java 8
         int[] arr = {5, 2, 8, 4, 6, 9};
 
