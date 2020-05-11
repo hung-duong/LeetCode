@@ -1,8 +1,5 @@
 package edu.hackerrank.easy.string;
 
-import java.util.Arrays;
-import java.util.Scanner;
-
 /**
  * Created by hungduong on 7/4/17.
  */

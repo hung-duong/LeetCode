@@ -1,8 +1,5 @@
 package edu.hackerrank.easy.array;
 
-import java.util.HashMap;
-import java.util.Map;
-
 /**
  * Created by hungduong on 7/20/17.
  */

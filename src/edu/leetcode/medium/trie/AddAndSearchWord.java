@@ -1,6 +1,7 @@
 package edu.leetcode.medium.trie;
 
-import java.util.*;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * Created by hungduong on 10/28/16.

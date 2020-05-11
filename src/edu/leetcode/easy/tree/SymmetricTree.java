@@ -2,9 +2,6 @@ package edu.leetcode.easy.tree;
 
 import edu.common.Utils.TreeNode;
 
-import java.util.LinkedList;
-import java.util.Queue;
-
 /**
  * Created by hungduong on 7/12/17.
  */

@@ -5,6 +5,7 @@ package edu.leetcode.easy.array;
  */
 public class BestTimeToBuyAndSellStockII {
     /*
+     https://leetcode.com/problems/best-time-to-buy-and-sell-stock-ii/
      * Eg: [7, 2, 1, 10, 2, 5] => maxProfit = 12 = 10 - 1 + 5 - 2
      */
     public static int maxProfit(int[] prices) {

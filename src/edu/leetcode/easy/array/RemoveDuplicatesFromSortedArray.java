@@ -4,6 +4,7 @@ import java.util.Arrays;
 
 /**
  * Created by hungduong on 1/9/17.
+ * https://leetcode.com/problems/remove-duplicates-from-sorted-array/
  */
 public class RemoveDuplicatesFromSortedArray {
     //Solution 1: bad performance O(n^2)

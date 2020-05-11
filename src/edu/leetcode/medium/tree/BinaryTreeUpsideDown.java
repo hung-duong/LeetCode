@@ -2,8 +2,6 @@ package edu.leetcode.medium.tree;
 
 import edu.common.Utils.TreeNode;
 
-import java.util.Observer;
-
 /**
  * Created by hungduong on 7/8/17.
  */

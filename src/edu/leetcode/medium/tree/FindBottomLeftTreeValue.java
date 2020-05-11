@@ -3,9 +3,7 @@ package edu.leetcode.medium.tree;
 import edu.common.Utils.TreeNode;
 
 import java.util.LinkedList;
-import java.util.List;
 import java.util.Queue;
-import java.util.Stack;
 
 /**
  * Created by hungduong on 7/7/17.

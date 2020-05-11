@@ -24,6 +24,7 @@ public class ContainsDuplicateII {
             *     Second pos of 5 is 8 (i)
             *     8 - 3 > 4. So when i achieves to 8, the first 5 ele in set is remove
             *     => i - j > k => false
+            *     We move the window k elements alongside of array
             */
             if(i > k)
                 set.remove(nums[i - k - 1]);

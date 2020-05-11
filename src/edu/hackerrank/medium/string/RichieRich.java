@@ -1,7 +1,5 @@
 package edu.hackerrank.medium.string;
 
-import java.util.Scanner;
-
 /**
  * Created by hungduong on 7/4/17.
  */

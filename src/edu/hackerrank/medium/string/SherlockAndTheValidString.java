@@ -1,10 +1,6 @@
 package edu.hackerrank.medium.string;
 
-import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.List;
-import java.util.Scanner;
-import java.util.stream.Collectors;
 
 /**
  * Created by hungduong on 7/4/17.

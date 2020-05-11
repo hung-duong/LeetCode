@@ -5,7 +5,8 @@ import edu.common.Utils.TreeNode;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by hungduong on 5/31/17.
