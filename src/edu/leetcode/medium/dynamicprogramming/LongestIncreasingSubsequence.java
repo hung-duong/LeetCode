@@ -23,7 +23,7 @@ public class LongestIncreasingSubsequence {
         for (int i = 1; i < nums.length; i++) {
             for (int j = 0; j <= i; j++) {
                 if (nums[j] < nums[i] && L[i] < L[j] + 1) {
-                    L[i] = L[i] + 1;
+                    L[i] = L[j] + 1;
                 }
             }
         }
@@ -41,6 +41,7 @@ public class LongestIncreasingSubsequence {
     /**
      * Solution 2: O(nlogn)
      * http://www.geeksforgeeks.org/longest-monotonically-increasing-subsequence-size-n-log-n/
+     * https://www.youtube.com/watch?v=S9oUiVYEq7E
      */
     public static int findPosition(int[] A, int l, int r, int key) {
         while (r - l > 1) {

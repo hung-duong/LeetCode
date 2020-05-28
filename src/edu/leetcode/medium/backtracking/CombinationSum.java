@@ -6,8 +6,15 @@ import java.util.List;
 
 /**
  * Created by hungduong on 1/17/17.
+ * https://leetcode.com/problems/combination-sum/
  */
 public class CombinationSum {
+    // Use backtracking solution
+    // Since the problem is to get all the possible results, not the best or the number of result,
+    // thus we don’t need to consider DP(dynamic programming), recursion is needed to handle it.
+    // Note:
+    //    If there is duplicated, we should remove the duplicated
+    //    If there is the negative, should ignore
     public static List<List<Integer>> combinationSum(int[] candidates, int target) {
         List<List<Integer>> result = new ArrayList<>();
         if(candidates == null || candidates.length == 0)
@@ -32,6 +39,8 @@ public class CombinationSum {
             comb.remove(comb.size() - 1);
         }
     }
+
+
 
     public static void main(String[] args) {
         int[] candidates = {10, 1, 2, 7, 6, 5};

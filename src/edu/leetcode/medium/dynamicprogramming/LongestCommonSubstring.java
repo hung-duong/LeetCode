@@ -9,7 +9,7 @@ public class LongestCommonSubstring {
      * Solution 1: A simple solution, is to one by one consider all substrings of first string and for every substring check
      * if it is a substring in second string. Keep track of the maximum length substring. There will be O(m^2) substrings and
      * we can find whether a string is subsring on another string in O(n) time (See this). So overall time complexity of this
-     * method would be O(n * m2)
+     * method would be O(n * m^2)
      */
     public static int LCS01(String str1, String str2) {
         return 0;
@@ -22,21 +22,21 @@ public class LongestCommonSubstring {
     public static int LCS02(String str1, String str2) {
         int m = str1.length();
         int n = str2.length();
-        int[][] LCSuff = new int[m + 1][n + 1];
-        int result = 0;
+
+        int[][] dp = new int[m + 1][n + 1];
 
         for (int i = 0; i <= m; i++) {
-            for (int j = 0; j <= n; j++) {
-                if (i == 0 || j == 0) LCSuff[i][j] = 0;
-                else if (str1.charAt(i) == str2.charAt(j)) {
-                    LCSuff[i][j] = LCSuff[i-1][j-1] + 1;
-                    result = Math.max(result, LCSuff[i][j]);
+            for (int j = 0; j<=n; j++) {
+                if (i==0 || j==0) {
+                    dp[i][j] = 0;
+                } else if (str1.charAt(i-1) == str2.charAt(j-1)) {
+                    dp[i][j] = dp[i - 1][j - 1] + 1;
                 } else {
-                    LCSuff[i][j] = 0;
+                    dp[i][j] = Math.max(dp[i - 1][j], dp[i][j - 1]);
                 }
             }
         }
 
-        return result;
+        return dp[m][n];
     }
 }

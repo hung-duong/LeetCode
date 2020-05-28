@@ -8,6 +8,9 @@ import java.util.List;
  */
 public class WordBreak {
     //using the Recursion => TIME LIMIT EXCEEDED
+    // Complexity: O(2^n) Consider the worst case where s = "abcd" and wordDict = [a, b, c, bc,ab,abc]
+    // and every prefix of s is present in the dictionary of words, then the recursion tree can grow up to 2^n
+    // Space: O(n) The depth of the recursion tree can go up to n.
     public static boolean wordBreak(String s, List<String> wordDict) {
         if(s.length() == 0) return true;
 
@@ -25,8 +28,18 @@ public class WordBreak {
         return false;
     }
 
+    //Breadth first-search
+    // DP: Time O(n^2)
+    //     space O(n)
+    public static boolean wordBreakBFS(String s, List<String> wordDict) {
+        return true;
+    }
+
+
     //Improve performace
-    public static boolean wordBreakImprove(String s, List<String> wordDict) {
+    // DP: Time O(n^2)
+    //     space O(n)
+    public static boolean wordBreakDP(String s, List<String> wordDict) {
         boolean[] f = new boolean[s.length() + 1];
         f[0] = true;
 
@@ -59,6 +72,6 @@ public class WordBreak {
         wordDict.add("mango");
         wordDict.add("and");
 
-        System.out.print(wordBreakImprove(s, wordDict));
+        System.out.print(wordBreakDP(s, wordDict));
     }
 }
