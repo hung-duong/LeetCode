@@ -1,4 +1,4 @@
-package edu.leetcode.medium;
+package edu.leetcode.medium.string;
 
 import java.util.*;
 

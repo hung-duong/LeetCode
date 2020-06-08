@@ -1,4 +1,4 @@
-package edu.leetcode.medium.dynamicprogramming;
+package edu.leetcode.medium.array;
 
 /**
  * Created by hungduong on 1/5/17.

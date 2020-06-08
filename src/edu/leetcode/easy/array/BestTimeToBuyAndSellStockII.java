@@ -7,8 +7,9 @@ public class BestTimeToBuyAndSellStockII {
     /*
      https://leetcode.com/problems/best-time-to-buy-and-sell-stock-ii/
      * Eg: [7, 2, 1, 10, 2, 5] => maxProfit = 12 = 10 - 1 + 5 - 2
+     * O(n) and O(1)
      */
-    public static int maxProfit(int[] prices) {
+    public static int maxProfit1(int[] prices) {
         if(prices == null || prices.length <= 1)
             return 0;
 
@@ -35,8 +36,25 @@ public class BestTimeToBuyAndSellStockII {
         return maxProfit;
     }
 
+    // O(n) and O(1)
+    public static int maxProfit2(int[] prices) {
+        if(prices == null || prices.length <= 1)
+            return 0;
+
+        int maxProfit = 0;
+        for (int i = 1; i<prices.length; i++) {
+            if (prices[i] > prices[i-1]) {
+                maxProfit += prices[i] - prices[i-1];
+            }
+        }
+
+        return maxProfit;
+    }
+
+
+
     public static void main(String[] args) {
         int[] nums = {7, 2, 1, 10, 2, 5};
-        System.out.print(maxProfit(nums));
+        System.out.print(maxProfit1(nums));
     }
 }

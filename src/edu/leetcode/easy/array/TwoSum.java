@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package edu.leetcode.easy.hashtable;
+package edu.leetcode.easy.array;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -13,7 +13,23 @@ import java.util.Map;
  * @author hungduong
  */
 public class TwoSum {
-    public int[] twoSum(int[] nums, int target) {
+
+    // Brute force: O(n^2)
+    public int[] twoSum1(int[] nums, int target) {
+        for(int i = 0; i < nums.length; i++) {
+            for (int j=i+1; j < nums.length; j++) {
+                if (nums[j] == target - nums[j]) {
+                    return new int[] {i, j};
+                }
+            }
+        }
+
+        return new int[]{0, 0};
+    }
+
+    // Running time: O(n)
+    // Space: O(n)
+    public int[] twoSum2(int[] nums, int target) {
         Map<Integer, Integer> map = new HashMap<>();
         
         for(int index = 0; index < nums.length; index++) {
@@ -26,4 +42,8 @@ public class TwoSum {
         
         return new int[]{0, 0};
     }
+
+
 }
+
+

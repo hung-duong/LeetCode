@@ -1,4 +1,4 @@
-package edu.leetcode.medium.hashtable;
+package edu.leetcode.medium.string;
 
 import java.util.HashMap;
 import java.util.Map;

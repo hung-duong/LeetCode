@@ -40,7 +40,7 @@ public class ContainsDuplicate {
 
         // Why we use HashSet. Because add operation in HashSet take O(1) and return true if added AND return false if already exist
         // In List use the add operation with O(n) running time
-        // In TreeSet also use the add operation with O(n) running time and return true if added
+        // In TreeSet also use the add operation with O(1) running time and return true if added
         Set<Integer> set = new HashSet<>();
 
         for(Integer num : nums) {

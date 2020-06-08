@@ -1,4 +1,4 @@
-package edu.leetcode.hard.array;
+package edu.leetcode.hard.string;
 
 /**
  * Created by hungduong on 5/18/17.
