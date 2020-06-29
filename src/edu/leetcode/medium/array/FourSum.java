@@ -204,7 +204,7 @@ public class FourSum {
         FourSum fs = new FourSum();
         int[] ns = {-9,-6,-3,-5,-10,-6,1,-7,7,-1,-3,-10,5,-3,-8,-8,4,0,-7};
         List<List<Integer>> ls = fs.fourSum02(ns, -15);
-        
+
         for(List<Integer> ss : ls) {
             List<Integer> lss = (List) ss;
             for(int l : lss) {

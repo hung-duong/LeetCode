@@ -12,8 +12,7 @@ public class ValidPalindrome {
 
         int lo = 0;
         int hi = s.length() - 1;
-        s = s.toLowerCase();
-        char[] chars = s.toCharArray();
+        char[] chars = s.toLowerCase().toCharArray();
 
         while(lo < hi) {
             if(!Character.isLetterOrDigit(chars[lo])) {
