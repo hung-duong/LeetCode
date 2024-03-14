@@ -28,6 +28,23 @@ public class RemoveElement {
         return len + 1;
     }
 
+    public static int removeElement2(int[] nums, int val) {
+        if(nums == null || nums.length == 0) {
+            return 0;
+        }
+
+        int len = nums.length - 1;
+        for (int i = len; i>=0; i--) {
+            if (nums[i] == val) {
+                if (i != len) nums[i] = nums[len];
+                len--;
+            }
+            
+        }
+
+        return len + 1;
+    }
+
     public static void main(String[] args) {
         int[] nums = {3, 4, 2, 3, 5, 6, 2, 2};
 

@@ -2,6 +2,7 @@ package edu.leetcode.easy.dynamicprogramming;
 
 /**
  * Created by hungduong on 1/2/17.
+ * https://leetcode.com/problems/house-robber/description/
  */
 public class HouseRobber {
     /*

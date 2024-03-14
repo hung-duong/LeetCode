@@ -24,9 +24,12 @@ public class LongestPalindromicSubstring {
         //Base case: P[ i, i ] ← true AND P[ i, i+1 ] ← ( Si = Si+1 )
         int longestBegin = 0;
         int maxLen = 1;
+
+        // Consider if len = 1, all character is palindrome
         for(int i = 0; i < n; i++)
             DP[i][i] = true;
 
+        // Consider if len = 2
         for(int i=0; i<n-1; i++) {
             if(chars[i] == chars[i+1]) {
                 DP[i][i+1] = true;
@@ -35,6 +38,7 @@ public class LongestPalindromicSubstring {
             }
         }
 
+        // Consider if len > 2
         for(int len = 3; len <= n; len++) {
             for(int i = 0; i < n - len + 1; i++) {
                 int j = i + len - 1;
@@ -106,8 +110,8 @@ public class LongestPalindromicSubstring {
     }
 
     public static void main(String[] args) {
-        String str = "babad";
-        String result = longestPalindrome02(str);
+        String str = "agbdba";
+        String result = longestPalindrome01(str);
         System.out.print(result);
     }
 }

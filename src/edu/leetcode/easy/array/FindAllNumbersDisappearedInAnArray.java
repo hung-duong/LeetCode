@@ -5,26 +5,9 @@ import java.util.List;
 
 /**
  * Created by hungduong on 1/11/17.
+ * https://leetcode.com/problems/find-all-numbers-disappeared-in-an-array/description/
  */
 public class FindAllNumbersDisappearedInAnArray {
-
-    // Runtime: 6ms and 64MB memory
-    public static List<Integer> findDisappearedNumbers01(int[] nums) {
-        List<Integer> list = new ArrayList<>();
-
-        int[] arr = new int[nums.length + 1];
-        for (int n : nums) {
-            arr[n] = 1;
-        }
-
-        for (int i = 1; i<arr.length; i++) {
-            if (arr[i] == 0)
-                list.add(i);
-        }
-
-        return list;
-
-    }
 
     //Runtime: 10ms and 62.8MB memory
     public static List<Integer> findDisappearedNumbers02(int[] nums) {
@@ -48,6 +31,24 @@ public class FindAllNumbersDisappearedInAnArray {
         }
 
         return list;
+    }
+
+    // Runtime: 3ms and 55MB memory
+    public static List<Integer> findDisappearedNumbers01(int[] nums) {
+        List<Integer> list = new ArrayList<>();
+
+        int[] arr = new int[nums.length + 1];
+        for (int n : nums) {
+            arr[n] = 1;
+        }
+
+        for (int i = 1; i<arr.length; i++) {
+            if (arr[i] == 0)
+                list.add(i);
+        }
+
+        return list;
+
     }
 
     public static void main(String[] args) {

@@ -2,6 +2,7 @@ package edu.leetcode.easy.dynamicprogramming;
 
 /**
  * Created by hungduong on 1/2/17.
+ * https://leetcode.com/problems/paint-fence/description/
  */
 
 // There is a fence with n posts, each post can be painted with one of the k colors.

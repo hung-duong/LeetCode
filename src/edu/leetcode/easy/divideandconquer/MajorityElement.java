@@ -2,6 +2,7 @@ package edu.leetcode.easy.divideandconquer;
 
 /**
  * Created by hungduong on 1/6/17.
+ * https://leetcode.com/problems/majority-element/description/
  */
 public class MajorityElement {
    /* Note: The majority element is the element that appears more than ⌊ n/2 ⌋ times

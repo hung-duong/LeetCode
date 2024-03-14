@@ -1,7 +1,8 @@
-package edu.leetcode.easy.array;
+package edu.leetcode.medium.array;
 
 /**
  * Created by hungduong on 1/9/17.
+ * https://leetcode.com/problems/merge-sorted-array/description/
  */
 public class MergeSortedArray {
     public void merge(int[] nums1, int m, int[] nums2, int n) {

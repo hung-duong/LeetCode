@@ -6,6 +6,7 @@ import java.util.Set;
 
 /**
  * Created by hungduong on 1/10/17.
+ * https://leetcode.com/problems/contains-duplicate/
  */
 public class ContainsDuplicate {
 
@@ -37,7 +38,7 @@ public class ContainsDuplicate {
         if(nums == null || nums.length == 0) {
             return false;
         }
-
+            
         // Why we use HashSet. Because add operation in HashSet take O(1) and return true if added AND return false if already exist
         // In List use the add operation with O(n) running time
         // In TreeSet also use the add operation with O(1) running time and return true if added

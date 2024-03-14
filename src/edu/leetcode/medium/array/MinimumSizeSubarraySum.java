@@ -4,22 +4,22 @@ package edu.leetcode.medium.array;
  * Created by hungduong on 1/14/17.
  */
 public class MinimumSizeSubarraySum {
-    //Use dynamic programming
-    public static int minSubArrayLen(int s, int[] nums) {
+    //Use Sliding window
+    public static int minSubArrayLen(int target, int[] nums) {
         if(nums == null || nums.length == 0)
             return 0;
 
         int sum = 0;
         int minLen = Integer.MAX_VALUE;
-        int lo = 0, hi;
+        int left = 0;
 
-        for(hi = 0; hi < nums.length; hi++) {
-            sum += nums[hi];
+        for(int right = 0; right < nums.length; right++) {
+            sum += nums[right];
 
-            while(sum >= s) {
-                minLen = Math.min(hi - lo + 1, minLen);
-                sum -= nums[lo];
-                lo++;
+            while(sum >= target) {
+                minLen = Math.min(right - left + 1, minLen);
+                sum -= nums[left];
+                left++;
             }
         }
 

@@ -15,7 +15,12 @@ public class ContainsDuplicateII {
             return false;
         }
 
+        // Why using Set: A Set contains no duplicate elements. That is one of the major reasons to use a set. 
+        // Why using Hashet: HashSet is Implemented using a hash table. Elements are not ordered. 
+        //                   The add, remove, and contains methods have constant time complexity O(1).
+        // https://www.programcreek.com/2013/03/hashset-vs-treeset-vs-linkedhashset/
         Set<Integer> set = new HashSet<>();
+
         for(int i = 0; i < nums.length; i++) {
             /*
             * Eg. 7, 3, 1, 0, 5, 4, 9, 10, 5, 2

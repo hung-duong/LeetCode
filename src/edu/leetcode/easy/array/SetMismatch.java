@@ -94,7 +94,7 @@ public class SetMismatch {
     }
 
     public static void main(String[] args) {
-        int[] nums = {1, 2, 2, 4};
+        int[] nums = {1, 6, 6, 2, 3, 4, 7};
         int[] res = findErrorNumsBetter(nums);
         for (int i = 0; i < res.length; i++)
             System.out.println(res[i]);

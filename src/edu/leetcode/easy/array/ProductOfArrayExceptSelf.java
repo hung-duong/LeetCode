@@ -2,6 +2,10 @@ package edu.leetcode.easy.array;
 
 import java.util.Arrays;
 
+/*
+ * https://leetcode.com/problems/product-of-array-except-self/description/
+ */
+
 public class ProductOfArrayExceptSelf {
     // Note: Don't use division
     // Use left and right product list
@@ -27,6 +31,7 @@ public class ProductOfArrayExceptSelf {
         return result;
     }
 
+    // O(n) running time and O(n) space
     public int[] productExceptSelf02(int[] nums) {
         int[] result = new int[nums.length];
 
