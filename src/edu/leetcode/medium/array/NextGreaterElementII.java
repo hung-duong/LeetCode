@@ -40,6 +40,11 @@ public class NextGreaterElementII {
 
 
     // Solution 2: O(n) + mono-stack
+    // We traver from Right to Left
+    // - For ele i, pop all eles in stack to find stack.peek() > nums[i]
+    //   -> So, current stack.peek() is Next Greater Ele of nums[i]
+    //   -> If stack is empty, bu can not find any ele satisfies the condition, so assign to - 1
+    // - Continue second round as above.
     // nums = [3, 8, 4, 1, 2]
     // First round: ans = [8, -1, -1, 2, -1], stack remaining have [8, 3]
     // Second round: ans = [8, -1, 8, 2, 3]

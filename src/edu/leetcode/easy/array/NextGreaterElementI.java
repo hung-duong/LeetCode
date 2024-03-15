@@ -1,5 +1,6 @@
 package edu.leetcode.easy.array;
 
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Hashtable;
 import java.util.List;
@@ -15,9 +16,7 @@ public class NextGreaterElementI {
     // Algo: Each element in nums1, find existing in nums2, if yes, then continue nums2 to find next greater element
     public static int[] nextGreaterElement1(int[] nums1, int[] nums2) {
         int[] ans = new int[nums1.length];
-        for (int i = 0; i < ans.length; i++) {
-            ans[i] = -1;
-        }
+        Arrays.fill(ans, -1);
 
         for (int i = 0; i < nums1.length; i++) {
             for (int j = 0; j < nums2.length; j++) {
