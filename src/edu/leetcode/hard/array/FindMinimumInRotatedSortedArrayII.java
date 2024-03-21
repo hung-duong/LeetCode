@@ -2,21 +2,21 @@ package edu.leetcode.hard.array;
 
 public class FindMinimumInRotatedSortedArrayII {
     public static int findMin(int[] nums) {
-        int left = 0, right = nums.length - 1;
+        int lo = 0, hi = nums.length - 1;
 
-        while (left < right) {
-            int mid = left + (right - left) / 2;
+        while (lo <= hi) {
+            int mid = lo + (hi - lo) / 2;
 
-            if (nums[mid] < nums[right]) {
-                right = mid;
-            } else if (nums[mid] > nums[right]) {
-                left = mid + 1;
+            if (nums[mid] < nums[hi]) {
+                hi = mid;
+            } else if (nums[mid] > nums[hi]) {
+                lo = mid + 1;
             } else {
-                right -= 1;
+                hi -= 1;
             }
         }
 
-        return nums[left];
+        return nums[lo];
     }
 
     public static void main(String[] args) {

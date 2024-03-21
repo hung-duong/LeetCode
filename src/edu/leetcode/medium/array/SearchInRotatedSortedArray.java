@@ -34,8 +34,8 @@ public class SearchInRotatedSortedArray {
             int mid = lo + (hi - lo) / 2;
 
             if (nums[mid] == target) {
-                return -1;
-            } else if (nums[mid] > nums[lo]) {
+                return mid;
+            } else if (nums[mid] >= nums[lo]) {
                 if (nums[lo] <= target && target < nums[mid]) {
                     hi = mid - 1;
                 } else {
