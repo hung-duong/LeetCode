@@ -51,7 +51,19 @@ public class BestTimeToBuyAndSellStockII {
         return maxProfit;
     }
 
-
+    // Explain from https://leetcode.com/problems/best-time-to-buy-and-sell-stock-with-transaction-fee/solutions/108870/most-consistent-ways-of-dealing-with-the-series-of-stock-problems/
+    // Case II: k = +Infinity
+    public static int maxProfit3(int[] prices) {
+        int T_ik0 = 0, T_ik1 = Integer.MIN_VALUE;
+        
+        for (int price : prices) {
+            int T_ik0_old = T_ik0;
+            T_ik0 = Math.max(T_ik0, T_ik1 + price);
+            T_ik1 = Math.max(T_ik1, T_ik0_old - price);
+        }
+        
+        return T_ik0;
+    }
 
     public static void main(String[] args) {
         int[] nums = {7, 2, 1, 10, 2, 5};

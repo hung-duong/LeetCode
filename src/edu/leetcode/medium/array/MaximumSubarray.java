@@ -22,8 +22,31 @@ public class MaximumSubarray {
         return max;
     }
 
-    //Solution 2: Use Divide and conquer
+    //Solution 2: Use DP but O(1) space using Kadane's Algorithm
     public static int maxSubArray02(int[] nums) {
+        int maxSoFar = nums[0], maxEndingHere = nums[0];
+        
+        for (int i=1; i < nums.length; i++) {
+            maxEndingHere = nums[i] + (maxEndingHere > 0 ? maxEndingHere : 0);
+
+            if (maxSoFar < maxEndingHere) {
+                maxSoFar = maxEndingHere;
+            }
+        }
+
+        return maxSoFar;
+    }
+
+
+    //Solution 2: Use Divide and conquer
+    public static int maxSubArray03(int[] nums) {
         return 1;
     }
+
+    public static void main(String[] args) {
+        int[] nums = new int[]{-2,1,-3,4,-1,2,1,-5,4};
+
+        System.out.print(maxSubArray02(nums));
+    }
+
 }

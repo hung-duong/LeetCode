@@ -102,22 +102,20 @@ public class BestTimeToBuyAndSellStockIII {
     }
 
     // O(N) and O(1) space
+    // https://leetcode.com/problems/best-time-to-buy-and-sell-stock-with-transaction-fee/solutions/108870/most-consistent-ways-of-dealing-with-the-series-of-stock-problems/
+    // Case II: k = 2
     public static int maxProfit3(int[] prices) {
-        int t1Cost = Integer.MAX_VALUE,
-            t2Cost = Integer.MAX_VALUE;
-        int t1Profit = 0,
-            t2Profit = 0;
+        int t_i10 = 0, t_i20 = 0;
+        int t_i11 = Integer.MIN_VALUE, t_i21 = Integer.MIN_VALUE;
 
         for (int price : prices) {
-            // the maximum profit if only one transaction is allowed
-            t1Cost = Math.min(t1Cost, price);
-            t1Profit = Math.max(t1Profit, price - t1Cost);
-            // reinvest the gained profit in the second transaction
-            t2Cost = Math.min(t2Cost, price - t1Profit);
-            t2Profit = Math.max(t2Profit, price - t2Cost);
+            t_i20 = Math.max(t_i20, t_i21 + price);
+            t_i21 = Math.max(t_i21, t_i10 - price);
+            t_i10 = Math.max(t_i10, t_i11 + price);
+            t_i11 = Math.max(t_i11, -price);
         }
 
-        return t2Profit;
+        return t_i20; 
     }
 
     public static void main(String[] args) {
