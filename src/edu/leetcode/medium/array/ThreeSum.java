@@ -50,19 +50,30 @@ public class ThreeSum {
     public static List<List<Integer>> threeSum2(int[] nums) {
         Arrays.sort(nums);
         List<List<Integer>> results = new ArrayList<>();
-
+        
         for (int i = 0; i < nums.length - 1 && nums[i] <= 0; i++) {
             if (i == 0 || nums[i] != nums[i - 1]) {
                 int lo = i + 1;
                 int hi = nums.length - 1;
                 while(lo < hi) {
                     int sum = nums[i] + nums[lo] + nums[hi];
-                    if (sum < 0 || (lo > i + 1 && nums[lo] == nums[lo - 1])) {
+                    if (sum == 0) {
+                        results.add(Arrays.asList(nums[i], nums[lo], nums[hi]));
+
+                        // Skip duplicate elements for lo
+                        while (lo < hi && nums[lo] == nums[lo + 1]) {
+                            lo++;
+                        } 
+
+                        // Skip duplicate elements for hi
+                         while (lo < hi && nums[hi] == nums[hi - 1]) {
+                            hi--;
+                        } 
+                    }
+                    if (sum < 0) {
                         lo++;
-                    } else if (sum > 0 || (hi < nums.length - 1 && nums[hi] == nums[hi + 1])) {
+                    } else {
                         hi--;
-                    } else{
-                        results.add(Arrays.asList(nums[i], nums[lo++], nums[hi--]));
                     }
                 }
             }

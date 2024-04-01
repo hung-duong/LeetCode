@@ -20,46 +20,44 @@ public class MajorityElementII {
          * Similar to Boyer-Moore algorithm
          */
 
-        List<Integer> list = new ArrayList<>();
-        if(nums == null || nums.length == 0)
-            return list;
-
-        int majority1 = nums[0], majority2 = nums[0];
-        int count1 = 1, count2 = 1;
-
-        for(int num : nums) {
-            if(majority1 == num) {
-                count1++;
-            } else if(majority2 == num) {
-                count2++;
-            } else if(count1 == 0) {
-                count1 = 1;
-                majority1 = num;
-            } else if(count2 == 0) {
-                count2 = 1;
-                majority2 = num;
-            } else {
-                count1--;
-                count2--;
-            }
-        }
-
-        System.out.println(majority1 + " " + majority2);
-
-        count1 = 0;
-        count2 = 0;
-        for(int num : nums) {
-            if(majority1 == num) {
-                count1++;
-            } else if(majority2 == num) {
-                count2++;
-            }
-        }
-
-        if(count1 > nums.length / 3) list.add(majority1);
-        if(count2 > nums.length / 3) list.add(majority2);
-
-        return list;
+         List<Integer> list = new ArrayList<>();
+         if(nums == null || nums.length == 0)
+             return list;
+ 
+         int majority1 = 0, majority2 = 0;
+         int count1 = 0, count2 = 0;
+ 
+         for(int num : nums) {
+             if(majority1 == num) {
+                 count1++;
+             } else if(majority2 == num) {
+                 count2++;
+             } else if(count1 == 0) {
+                 count1 = 1;
+                 majority1 = num;
+             } else if(count2 == 0) {
+                 count2 = 1;
+                 majority2 = num;
+             } else {
+                 count1--;
+                 count2--;
+             }
+         }
+ 
+         count1 = 0;
+         count2 = 0;
+         for(int num : nums) {
+             if(majority1 == num) {
+                 count1++;
+             } else if(majority2 == num) {
+                 count2++;
+             }
+         }
+ 
+         if(count1 > nums.length / 3) list.add(majority1);
+         if(count2 > nums.length / 3) list.add(majority2);
+ 
+         return list;
     }
 
     public static void main(String[] args) {

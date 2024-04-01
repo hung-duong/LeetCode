@@ -1,4 +1,4 @@
-package edu.leetcode.easy.divideandconquer;
+package edu.leetcode.easy.array;
 
 /**
  * Created by hungduong on 1/6/17.
@@ -14,8 +14,8 @@ public class MajorityElement {
         //In the first pass, we need 2 values:
         //1. A candidate value, initially set to any value.
         //2. A count, initially set to 0.
-        int major = nums[0];
-        int count = 1;
+        int major = 0;
+        int count = 0;
 
         // For each element in our input list, we first examine the count value. If the count is equal to 0,
         // we set the candidate to the value at the current element. Next, first compare the element's value
@@ -23,9 +23,10 @@ public class MajorityElement {
         // we decrement count by 1.
         for(int i = 1; i < nums.length; i++) {
             if(count == 0) {
-                count++;
                 major = nums[i];
-            } else if(major != nums[i]) {  //count > 0
+            } 
+            
+            if(major != nums[i]) {  //count > 0
                 count--;
             } else {
                 count++;
