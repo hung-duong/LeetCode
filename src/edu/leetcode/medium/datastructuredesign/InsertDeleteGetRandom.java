@@ -1,4 +1,4 @@
-package edu.leetcode.hard.datastructuredesign;
+package edu.leetcode.medium.datastructuredesign;
 
 import java.util.*;
 
@@ -43,9 +43,9 @@ public class InsertDeleteGetRandom {
             * Eg. List = 1 2 3
             *     Map = {<1, 0>, <2, 1>, <3, 2>}
             *     Remove 1 in List
-            *     put <3, 0> in to map => Map = {<1, 0>, <2, 1>, <3, 0>}
-            *     Set List(0) = List(2) => List = 3 2 3
-            *     Remove List(3) => List =  3 2
+            *          Put <3, 0> in to map => Map = {<1, 0>, <2, 1>, <3, 0>}
+            *          Set List(0) = List(2) => List = 3 2 3
+            *          Remove List(3) => List =  3 2
             */
             if(listMap.containsKey(val)) {
                 listMap.put(list.get(list.size() - 1), listMap.get(val));

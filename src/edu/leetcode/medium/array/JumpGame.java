@@ -49,6 +49,6 @@ public class JumpGame {
 
     public static void main(String[] args) {
         int[] arr = {0, 2};
-        System.out.print(JumpGame.canJump(arr));
+        System.out.print(JumpGame.canJump1(arr));
     }
 }
