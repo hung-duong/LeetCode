@@ -1,6 +1,5 @@
 package edu.leetcode.easy.array;
 
-import java.lang.reflect.Array;
 import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Set;

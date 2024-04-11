@@ -55,9 +55,9 @@ public class Candy {
     }
 
     // Solution 2: O(n) and O(1) space
-    public int candy3(int[] ratings) {
+    // public int candy3(int[] ratings) {
         
-    }
+    // }
 
     
 }

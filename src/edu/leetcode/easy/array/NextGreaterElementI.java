@@ -111,6 +111,8 @@ public class NextGreaterElementI {
         for (int i = 0;  i<nums1.length; i++) {
             ans[i] = hmap.getOrDefault(nums1[i], -1);
         }
+
+        return ans;
     }
 
     // Solution 4: O(n) without stack, only use HashMap
