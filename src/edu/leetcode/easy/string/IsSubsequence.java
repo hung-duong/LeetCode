@@ -1,10 +1,11 @@
-package edu.leetcode.medium.dynamicprogramming;
+package edu.leetcode.easy.string;
 
 /**
  * Created by hungduong on 1/4/17.
  */
 public class IsSubsequence {
-    //Good but running time is too big
+
+    // Solution 1: Two pointers
     public boolean isSubsequence01(String s, String t) {
         if (s == null || s.length() == 0)
             return true;

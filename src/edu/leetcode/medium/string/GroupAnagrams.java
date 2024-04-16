@@ -6,6 +6,7 @@ import java.util.*;
  * Created by hungduong on 2/27/17.
  */
 public class GroupAnagrams {
+    // Solution 1: Sorting
     //Time Limit Exceeded the running time O(nlogn + n*klogk)
     public List<List<String>> groupAnagrams01(String[] strs) {
         if(strs == null || strs.length == 0)
@@ -29,8 +30,45 @@ public class GroupAnagrams {
         return new ArrayList<List<String>>(container.values());
     }
 
+    // Solution 2: Categorize by count
+    public List<List<String>> groupAnagrams(String[] strs) {
+        Map<String, List<String>> ans = new HashMap<>();
+
+        for (String str : strs) {
+            String newS = buildKey(str);
+
+            if (!ans.containsKey(newS))
+                ans.put(newS, new ArrayList<>());
+            
+            ans.get(newS).add(str);
+        }
+
+        return new ArrayList(ans.values());
+    }
+
+    private String buildKey(String str) {
+        int[] chars = new int[26];
+
+        for (int i=0; i<str.length(); i++) {
+            chars[str.charAt(i) - 'a']++;
+        }
+
+        StringBuilder sb = new StringBuilder();
+        for(int i=0; i<26; i++) {
+            sb.append("#");
+            sb.append(chars[i]);
+        }
+
+        return sb.toString();
+    }
+
+
     //Use prime number to optimize running time for sorting
     //Running time is O(n*k)
+    // This soltuon will be FAILED for test case:
+    // Input: ["aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa","aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"]
+    // Current output: [["aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa","aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"]]
+    // Expected output:[["aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"],["aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"]]
     public List<List<String>> groupAnagrams02(String[] strs) {
         if (strs == null || strs.length == 0)
             return new ArrayList<List<String>>();
