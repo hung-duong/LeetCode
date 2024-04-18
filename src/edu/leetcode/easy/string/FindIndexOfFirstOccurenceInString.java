@@ -4,7 +4,7 @@ package edu.leetcode.easy.string;
  * Created by hungduong on 10/25/16.
  * https://leetcode.com/problems/find-the-index-of-the-first-occurrence-in-a-string/description/
  */
-public class FindIndexPfFirstOccurenceInString {
+public class FindIndexOfFirstOccurenceInString {
 
     // Solution 1.1: Sliding Window (Naive Approach)
     public int strStrNaive(String haystack, String needle) {
@@ -177,6 +177,6 @@ public class FindIndexPfFirstOccurenceInString {
     }
 
     public static void main(String[] args) {
-        System.out.print(FindIndexPfFirstOccurenceInString.strStrKMP("mississippi", "issip"));
+        System.out.print(FindIndexOfFirstOccurenceInString.strStrKMP("mississippi", "issip"));
     }
 }

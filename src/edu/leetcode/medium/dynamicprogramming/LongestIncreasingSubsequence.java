@@ -1,5 +1,7 @@
 package edu.leetcode.medium.dynamicprogramming;
 
+import java.util.Arrays;
+
 /**
  * Created by hungduong on 7/26/17.
  */
@@ -13,29 +15,25 @@ public class LongestIncreasingSubsequence {
         // when input is decreasing like : 3, 2, 1 => Longest Increasing Subsequences is 1 means {3}, {2}, {1}
         // Let arr[0..n-1] be the input array and L(i) be the length of the LIS ending at index i such that arr[i]
         // is the last element of the LIS.
-        int[] L = new int[nums.length];
-        for (int i = 0; i < nums.length; i++) {
-            L[i] = 1;
-        }
+        int[] dp = new int[nums.length];
+        Arrays.fill(dp, 1);
 
         // L(i) = 1 + max(L(j)) where 0 < j < i and arr[j] < arr[i]
         // L(i) = 1, if no such j exists
         for (int i = 1; i < nums.length; i++) {
             for (int j = 0; j <= i; j++) {
-                if (nums[j] < nums[i] && L[i] < L[j] + 1) {
-                    L[i] = L[j] + 1;
+                if (nums[i] > nums[j]){
+                    dp[i] = Math.max(dp[i], dp[j] + 1);
                 }
             }
         }
 
-        int max = 0;
-        for (int i = 0; i < nums.length; i++) {
-            if (max < L[i]) {
-                max = L[i];
-            }
+        int longest = 0;
+        for (int val : dp) {
+            longest = Math.max(longest, val);
         }
 
-        return max;
+        return longest;
     }
 
     /**
@@ -84,8 +82,8 @@ public class LongestIncreasingSubsequence {
     }
 
     public static void main(String[] args) {
-        int[] nums = {3,5,6,2,5,4,19,5,6,7,12};
-        int len = lengthOfLIS02(nums);
+        int[] nums = {0,1,0,3,2,3};
+        int len = lengthOfLIS01(nums);
         System.out.print(len);
     }
 }

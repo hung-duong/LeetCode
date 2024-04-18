@@ -20,10 +20,11 @@ public class ValidPalindrome {
             } else if(!Character.isLetterOrDigit(chars[hi])) {
                 hi--;
             } else {
-                if(chars[lo] == chars[hi]) {
-                    lo++;
-                    hi--;
-                }
+                if(chars[lo] != chars[hi])
+                    return false;
+
+                lo++;
+                hi--;
             }
         }
 
