@@ -59,9 +59,9 @@ public class LetterCombinationsOfAPhoneNumber {
     // Solution 2: BFS
     //Running time: O(n^3) and O(3^n)
     public static List<String> letterCombinations2(String digits) {
-        List<String> result = new ArrayList<>();
+        List<String> ans = new ArrayList<>();
         if(digits == null || digits.length() == 0)
-            return result;
+            return ans;
 
         String[] mapping = {"0", "1", "abc", "def",
                             "ghi", "jkl", "mno", "pqrs",
@@ -88,9 +88,10 @@ public class LetterCombinationsOfAPhoneNumber {
             }
         }
 
-        while(!queue.isEmpty()) result.add(queue.pop());
+        while(!queue.isEmpty()) 
+            ans.add(queue.pop());
 
-        return result;
+        return ans;
     }
 
     public static void main(String[] args) {
