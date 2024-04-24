@@ -1,15 +1,16 @@
-package edu.leetcode.medium.array;
+package edu.leetcode.medium.matrix;
 
 /**
  * Created by hungduong on 1/11/17.
  */
 public class RotateImage {
+    // Solution: Rotate group of four cells
     /*
      * Eg.  1 2 3        7 2 1      7 4 1
      *      4 5 6    =>  4 5 6  =>  8 5 2
      *      7 8 9        9 8 3      9 6 3
      */
-    public static void rotate(int[][] matrix) {
+    public static void rotate1(int[][] matrix) {
         int len = matrix.length;
 
         for(int i = 0; i < len / 2; i++) {       //For rows
@@ -56,6 +57,12 @@ public class RotateImage {
             System.out.println();
         }
     }
+
+    // Solution 2: Tranpose & Reverse
+    public static void rotate2(int[][] matrix) {
+        return;
+    }
+
 
     public static void main(String[] args) {
         int[][] matrix = { {1,2,3} ,{3,4,5} , {4,5, 6}};

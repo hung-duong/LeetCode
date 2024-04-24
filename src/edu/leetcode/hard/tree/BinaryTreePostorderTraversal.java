@@ -39,7 +39,7 @@ public class BinaryTreePostorderTraversal {
             return integerList;
         }
 
-        Stack<TreeNode> stack = new Stack();
+        Stack<TreeNode> stack = new Stack<>();
 
         stack.push(root);
 

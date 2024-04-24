@@ -3,7 +3,7 @@ package edu.leetcode.medium.string;
 public class InterleavingString {
 
     // Solution 1: 2D (Matrix) - Dynamic Programming
-    public boolean isInterleave1(String s1, String s2, String s3) {
+    public static boolean isInterleave1(String s1, String s2, String s3) {
         int n = s1.length();
         int m = s2.length();
         int k = s3.length();
@@ -37,7 +37,7 @@ public class InterleavingString {
     }
 
     // Solution 2: 1D (Array) - Dynamic Programming
-    public boolean isInterleave2(String s1, String s2, String s3) {
+    public static boolean isInterleave2(String s1, String s2, String s3) {
         int n = s1.length();
         int m = s2.length();
         int k = s3.length();
@@ -70,7 +70,7 @@ public class InterleavingString {
         String s2 = "dbbca";
         String s3 = "aadbbcbcac";
 
-        System.out.println(isInterleave(s1, s2, s3));
+        System.out.println(isInterleave2(s1, s2, s3));
     }
 
 }

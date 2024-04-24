@@ -1,4 +1,4 @@
-package edu.leetcode.medium.string;
+package edu.leetcode.easy.string;
 
 import java.util.Arrays;
 
