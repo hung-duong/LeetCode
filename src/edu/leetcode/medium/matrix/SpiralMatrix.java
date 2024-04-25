@@ -1,4 +1,4 @@
-package edu.leetcode.medium.array;
+package edu.leetcode.medium.matrix;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -12,40 +12,47 @@ public class SpiralMatrix {
         if(matrix == null || matrix.length == 0)
             return new ArrayList<>();
 
-        List<Integer> list = new ArrayList<>();
+        List<Integer> ans = new ArrayList<>();
 
         int up = 0, down = matrix.length - 1, left = 0, right = matrix[0].length - 1;
         while(true) {
-            for(int col = left; col <= right; col++)
-                list.add(matrix[up][col]);
 
+            //1. Move column [left -> right] at row up
+            for(int col = left; col <= right; col++)
+                ans.add(matrix[up][col]);
+
+            //Condition: Move row down 1 because square [up, right] already included at 1
             if(++up > down)
                 break;
 
+            //2. Move row [up -> down] at column right
             for(int row = up; row <= down; row++)
-                list.add(matrix[row][right]);
+                ans.add(matrix[row][right]);
 
+            //Condition: Move column left 1 because square [down, right] already included at 2
             if(--right < left)
                 break;
 
+            //3. Move column [right -> left] at row down
             for(int col = right; col >= left; col--)
-                list.add(matrix[down][col]);
+                ans.add(matrix[down][col]);
 
+            //Condition: Move row up 1 because square [down, left] already included at 3
             if(--down < up)
                 break;
 
+            //4. Move row [down -> up] at column left
             for(int row = down; row >= up; row--)
-                list.add(matrix[row][left]);
+                ans.add(matrix[row][left]);
 
+            //Condition: Move column right 1 because spare [up, left] already included at 4
             if(++left > right)
                 break;
+
+            // Continue until one of condition 1, 2, 3 or 4 satfities to break
         }
 
-        for(Integer i : list) {
-            System.out.println(i + " ");
-        }
-
-        return list;
+        return ans;
     }
 
     public static void main(String[] args) {

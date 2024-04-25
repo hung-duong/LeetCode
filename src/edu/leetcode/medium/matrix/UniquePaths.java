@@ -1,4 +1,6 @@
-package edu.leetcode.medium.dynamicprogramming;
+package edu.leetcode.medium.matrix;
+
+import java.util.Arrays;
 
 /**
  * Created by hungduong on 10/13/16.
@@ -55,21 +57,18 @@ public class UniquePaths {
     //4-6-> 56  	Q(4, 6) = 56
 
     public static int uniquePaths2(int m, int n) {
+        int[] paths = new int[n];
 
-        int[] Q = new int[n];
+        // Fill all paths with 1, if maxtrix is array then there is only 1 path
+        Arrays.fill(paths, 1);
 
-        for(int i = 0; i < n; i++) {
-            Q[i] = 1;
-        }
-
-        for(int i=1; i < m; i++) {
-            for(int j=1; j < n; j++) {
-                Q[j] = Q[j] + Q[j - 1];
+        for (int i = 1; i < m; i++) {
+            for (int j = 1; j < n; j++) {
+                paths[j] = paths[j] + paths[j - 1];
             }
         }
 
-
-        return Q[n - 1];
+        return paths[n - 1];
     }
 
     public static void main(String[] args) {
