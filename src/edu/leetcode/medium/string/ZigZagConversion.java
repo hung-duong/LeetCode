@@ -10,10 +10,15 @@ public class ZigZagConversion {
     // Solution 1: Simulate Zig-Zag Movement
     public static String convert1(String s, int numRows) {
         if(numRows == 0 || numRows == 1 || s.length() <= numRows)
-        return s;
+            return s;
 
         int n = s.length();
+        // Each section, we will have 2*numRows - 2 characters
+        // P   A   H   N       -> 3 sections:
+        // A P L S I I G       -> Section 1: PAYP     Section 2: ALIS
+        // Y   I   R           -> Section 3: HING     Section 4: NG
         int sections = (int) Math.ceil(n / (2 * numRows - 2.0));
+
         int numCols = sections * (numRows - 1);
 
         char[][] matrix = new char[numRows][numCols];
@@ -46,7 +51,7 @@ public class ZigZagConversion {
         return stringBuilder.toString();
     }
 
-    // Soluton: (Same but more easy to un)Simulate Zig-Zag Movement
+    // Solution: (Same but more easy to understand)Simulate Zig-Zag Movement
     public String convert(String s, int numRows) {
         if (numRows == 1) return s;
 
